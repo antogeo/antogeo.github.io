@@ -124,12 +124,12 @@ body {
     overflow: hidden;
  }
  .home-container {
-  margin-top: 28.5%;
+  margin-top: 18.5%;
   background-color: #fff;
  }
 
  .home-container .left-content {
-    padding-top: 25%;
+    padding-top: 5%;
     padding-left: 35px;
  }
 
@@ -146,13 +146,18 @@ body {
     letter-spacing: 0.5px;
     color: #121212;
     text-transform: uppercase;
-    margin: 0px;
+		margin-top: 10%
+    margin: 10px;
     font-weight: 900;
+		text-align: center;
+		padding-top: 
  }
 
   .home-container .left-content h2 em {
     font-style: normal;
     color: #f78b26;
+		text-align: center;
+
   }
 
   .home-container .left-content p {
@@ -168,6 +173,7 @@ body {
 
   .home-container .left-content .primary-button {
     margin-top: 30px;
+		margin-left: 30px
   }
 
   .home-container .left-content .primary-button a {
@@ -553,7 +559,7 @@ footer p em {
   }
 
   .responsive-logo img {
-    max-width: 100%;
+    max-width: 130%;
   }
 
   .home-container {
