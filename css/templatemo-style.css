@@ -321,6 +321,101 @@ body {
 
 /*
 ========================================
+----------- LINKS STYLE ------------
+========================================
+*/
+
+.links-container {
+  background-color: #fff;
+  margin-top: 29.5%;
+}
+
+.links-form {
+  padding: 0px 0px 0px 30px;
+  text-align: center;
+}
+
+.links-form h2 {
+  margin-top: -50px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #f78b26;
+}
+
+.links-form input {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 13px;
+  color: #aaa;
+  background-color: #f4f4f4;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.links-form textarea {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 180px;
+  height: 140px;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 13px;
+  color: #aaa;
+  background-color: #f4f4f4;
+  border: none;
+  outline: none!important;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.links-form button {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #121212;
+  border: 1px solid #343434;
+  background-color: transparent;
+  padding: 11px 14px;
+  outline: none;
+  margin-bottom: 30px;
+  border-radius: 0;
+}
+
+.links-form button:hover {
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  border-color: #f78b26;
+  color: #f78b26;
+  text-decoration: none;
+}
+
+.links-info {
+  padding: 60px 30px 0px 0px;
+}
+
+.links-info p em {
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+/*
+========================================
 ----------- CONTACT STYLE ------------
 ========================================
 */
@@ -402,6 +497,19 @@ body {
   border-color: #f78b26;
   color: #f78b26;
   text-decoration: none;
+}
+
+.contact-form checkbox {
+	display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .more-info {
