@@ -334,7 +334,7 @@ body {
 
 .links-container {
   background-color: #fff;
-  margin-top: 29.5%;
+  margin-top: 10.5%;
 }
 
 .links-form {
@@ -388,18 +388,6 @@ body {
   box-shadow: none;
 }
 
-.links-form button {
-  font-size: 11px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #121212;
-  border: 1px solid #343434;
-  background-color: transparent;
-  padding: 11px 14px;
-  outline: none;
-  margin-bottom: 30px;
-  border-radius: 0;
-}
 
 .links-form button:hover {
   -moz-transition: all 0.2s linear;
@@ -412,7 +400,8 @@ body {
 }
 
 .links-info {
-  padding: 60px 30px 0px 0px;
+  padding: 20px 30px 0px;
+	position: relative
 }
 
 .links-info p em {
