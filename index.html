@@ -269,7 +269,7 @@ Scholarships: Actions de Recherche Concertée, Human Brain Project.</p>
                           <div class="heading">
                             <h2>Contact form</h2>
                           </div>
-                          <form id="contact" action="" method="post">
+                          <!-- <form id="contact" action="" method="post">
                             <fieldset>
                               <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
                             </fieldset>
@@ -282,6 +282,27 @@ Scholarships: Actions de Recherche Concertée, Human Brain Project.</p>
                             <fieldset>
                               <button type="submit" id="form-submit" class="btn">send</button>
                             </fieldset>
+                          </form> -->
+                          <form action="mail.php" method="POST">
+                            <p>Name</p> <input type="text" name="name">
+                            <p>Email</p> <input type="text" name="email">
+                            <p>Phone</p> <input type="text" name="phone">
+
+                            <p>Request Phone Call:</p>
+                            Yes:<input type="checkbox" value="Yes" name="call">
+                            No:<input type="checkbox" value="No" name="call"><br />
+
+
+                            <p>Priority</p>
+                            <select name="priority" size="1">
+                            <option value="Low">Low</option>
+                            <option value="Normal">Normal</option>
+                            <option value="High">High</option>
+                            <option value="Emergency">Emergency</option>
+                            </select>
+                            <br />
+                            <p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
+                            <input type="submit" value="Send"><input type="reset" value="Clear">
                           </form>
                         </div>
                       </div>
