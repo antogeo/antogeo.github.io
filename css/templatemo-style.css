@@ -263,6 +263,61 @@ body {
   width: 100%;
 }
 
+/*========================================
+----------- MORE STYLE -----------------
+========================================
+*/
+
+.more-container {
+  text-align: center;
+  background-color: #fff;
+  margin-top: 24%;
+}
+
+.more-container h2 {
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  color: #121212;
+  text-transform: uppercase;
+  margin: 40px;
+  margin-bottom: 0px;
+  font-weight: 900;
+}
+
+.more-container h2 em {
+  font-style: normal;
+  color: #f78b26;
+}
+
+.more-container .under-line {
+  width: 60px;
+  height: 3px;
+  background-color: #121212;
+  margin: 15px auto 20px auto;
+}
+
+.more-container .pers-photo {
+  width: 259px;
+  height: 259px;
+  #background-color: #121212;
+  margin: 15px auto 20px auto;
+}
+.more-container p {
+  font-size: 14px;
+  color: #343434;
+  margin: 15px 35px 30px 35px;
+}
+
+.more-container p em {
+  font-weight: bold;
+  font-style: normal;
+
+}
+
+.more-container img {
+  width: 100%;
+}
+
 /*
 ========================================
 ----------- PROJECTS STYLE -----------------
@@ -574,7 +629,7 @@ footer p em {
     width: 100%;
   }
 
-  .about-container {
+  .more-container {
     margin-top: 0%;
   }
 
