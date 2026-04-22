@@ -3785,7 +3785,3 @@
 
   return new Lightbox();
 }));
-
-$(window).on('load', function() {
-    $('.preloader').fadeOut(500);
-});
