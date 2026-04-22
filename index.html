@@ -96,8 +96,8 @@ http://www.templatemo.com/tm-502-short
                   </div>
                 </div>
                 <!-- EDUCATION -->
-                <div class="fc-tab-2">
-                  <script>
+                <div id="education-container"></div>
+                    <script>
                       fetch('education.html')
                           .then(response => response.text())
                           .then(data => {
@@ -106,10 +106,8 @@ http://www.templatemo.com/tm-502-short
                           .catch(error => {
                             console.error('Error loading more.html:', error);
                           });
-                    </script>  
-                </div>
-
-                <!-- PUBLICATIONS>
+                    </script> 
+                <!-- PUBLICATIONS -->
                 <div id="publication-container"></div>
                     <script>
                       fetch('publication.html')
@@ -120,7 +118,7 @@ http://www.templatemo.com/tm-502-short
                           .catch(error => {
                             console.error('Error loading more.html:', error);
                           });
-                    </script>  
+                    </script> 
                 <!--LINKS-->
                 <div class="fc-tab-4">
                   <div class="links-container">
