@@ -111,19 +111,28 @@ http://www.templatemo.com/tm-502-short
                           });
                 </script> 
               <!-- PUBLICATIONS -->
-                  <div class="fc-tab-3">
-                      <div id="publication-container"></div>
-                  </div>
-                  <script>
-                      fetch('publications.html')
-                          .then(response => response.text())
-                          .then(data => {
+                <div class="fc-tab-3">
+                    <div id="publication-container"></div>
+                </div>
+                <script>
+                    fetch('publications.html')
+                        .then(response => response.text())
+                        .then(data => {
                             document.getElementById('publication-container').innerHTML = data;
-                          })
-                          .catch(error => {
-                            console.error('Error loading more.html:', error);
-                          });
-                  </script> 
+                            $('#publication-container .owl-carousel').owlCarousel({
+                                items: 1,
+                                loop: false,
+                                nav: true,
+                                dots: true,
+                                mouseDrag: true,
+                                touchDrag: true,
+                                smartSpeed: 250
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error loading publications.html:', error);
+                        });
+                </script>
                 <!--LINKS-->
                 <div class="fc-tab-4">
                   <div class="links-container">
