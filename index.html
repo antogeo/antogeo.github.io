@@ -95,10 +95,11 @@ http://www.templatemo.com/tm-502-short
                     </div>
                   </div>
                 </div>
+              </div>   
                 <!-- EDUCATION -->
-                <div id="education-container"></div>
-                    <script>
-                      fetch('education.html')
+              <div id="education-container"></div>
+                <script>
+                    fetch('education.html')
                           .then(response => response.text())
                           .then(data => {
                             document.getElementById('education-container').innerHTML = data;
@@ -106,10 +107,10 @@ http://www.templatemo.com/tm-502-short
                           .catch(error => {
                             console.error('Error loading more.html:', error);
                           });
-                    </script> 
-                <!-- PUBLICATIONS -->
-                <div id="publication-container"></div>
-                    <script>
+                </script> 
+              <!-- PUBLICATIONS -->
+              <div id="publication-container"></div>
+                  <script>
                       fetch('publication.html')
                           .then(response => response.text())
                           .then(data => {
@@ -118,7 +119,7 @@ http://www.templatemo.com/tm-502-short
                           .catch(error => {
                             console.error('Error loading more.html:', error);
                           });
-                    </script> 
+                  </script> 
                 <!--LINKS-->
                 <div class="fc-tab-4">
                   <div class="links-container">
