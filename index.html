@@ -347,10 +347,13 @@ http://www.templatemo.com/tm-502-short
             <!-- More -->
                 <script>
                   fetch('more.html')
-                    .then(response => response.text())
-                    .then(data => {
-                      document.getElementById('more-container').innerHTML = data;
-                    });
+                      .then(response => response.text())
+                      .then(data => {
+                        document.getElementById('more-container').innerHTML = data;
+                      })
+                      .catch(error => {
+                        console.error('Error loading more.html:', error);
+                      });
                 </script>
                   </div>
                 </div>
