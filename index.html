@@ -119,14 +119,11 @@ http://www.templatemo.com/tm-502-short
                         .then(response => response.text())
                         .then(data => {
                             document.getElementById('publication-container').innerHTML = data;
-                            $('#publication-container .owl-carousel').owlCarousel({
+                            jQuery('#publication-container .owl-carousel').owlCarousel({
                                 items: 1,
                                 loop: false,
                                 nav: true,
-                                dots: true,
-                                mouseDrag: true,
-                                touchDrag: true,
-                                smartSpeed: 250
+                                dots: true
                             });
                         })
                         .catch(error => {
