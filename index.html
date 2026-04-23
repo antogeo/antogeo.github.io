@@ -135,33 +135,20 @@ http://www.templatemo.com/tm-502-short
                             console.error('Error loading publications.html:', error);
                         });
                 </script>
-                <!--LINKS-->
-                <div class="fc-tab-4">
-                  <div class="links-container">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="links-form">
-                          <div class="heading">
-                            <h2>Selected Links</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div>
-                        <div class="links-info">
-                          <a href="http://scikit-learn.org/stable/"><b align="right" padding-left: 20px> scikit learn <img src="img/scikit-learn-logo-small.png">  </b></a><br>
-                        </div>
-                        <div class="links-info">
-                          <a href="http://nilearn.github.io"><b align="right"> Nilearn <img src="img/nilearn-logo.png"></b></a><br>
-                        </div>
-                        <div class="links-info">
-                          <a href="http://www.coma.ulg.ac.be/"><b align="right"> Coma Science Group <img src="img/coma.jpg"></b></a><br>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <!-- LINKS -->
+                <div class="fc-tab-2">
+                  <div id="links-container"></div>
                 </div>
+                <script>
+                    fetch('links.html')
+                          .then(response => response.text())
+                          .then(data => {
+                            document.getElementById('links-container').innerHTML = data;
+                          })
+                          .catch(error => {
+                            console.error('Error loading more.html:', error);
+                          });
+                </script>                 
                 <!-- CONTACT -->
                 <div class="fc-tab-5">
                   <div class="contact-container">
