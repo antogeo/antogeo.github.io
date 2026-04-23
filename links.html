@@ -1,29 +1,71 @@
 <!--LINKS-->
-
 <div class="links-container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="links-form">
-        <div class="heading">
-          <h2>Selected Links</h2>
-        </div>
-      </div>
-    </div>
+  <div class="heading" style="text-align: center;">
+    <h2>Selected Links</h2>
   </div>
-  <div class="row">
-    <div>
-      <div class="links-info">
-        <a href="http://scikit-learn.org/stable/"><b align="right" padding-left: 20px> scikit learn <img src="img/scikit-learn-logo-small.png">  </b></a><br>
-      </div>
-      <div class="links-info">
-        <a href="http://nilearn.github.io"><b align="right"> Nilearn <img src="img/nilearn-logo.png"></b></a><br>
-      </div>
-      <div class="links-info">
-        <a href="https://www.fz-juelich.de/en/inm/inm-7/research-groups/applied-machine-learning-aml"><b align="right"> Applied MAchine Learning Group <img src="img/juaml.png"></b></a><br>
-      </div>
-      <div class="links-info">
-        <a href="http://www.coma.ulg.ac.be/"><b align="right"> Coma Science Group <img src="img/coma.jpg"></b></a><br>
-      </div>
+
+  <div id="links-cloud" style="position: relative; height: 500px;">
+    <div class="links-info">
+      <a href="http://scikit-learn.org/stable/">
+        <img src="img/scikit-learn-logo-small.png"><br>scikit learn
+      </a>
+    </div>
+    <div class="links-info">
+      <a href="http://nilearn.github.io">
+        <img src="img/nilearn-logo.png"><br>Nilearn
+      </a>
+    </div>
+    <div class="links-info">
+      <a href="https://www.fz-juelich.de/en/inm/inm-7/research-groups/applied-machine-learning-aml">
+        <img src="img/juaml.png"><br>Applied Machine Learning Group
+      </a>
+    </div>
+    <div class="links-info">
+      <a href="http://www.coma.ulg.ac.be/">
+        <img src="img/coma.jpg"><br>Coma Science Group
+      </a>
     </div>
   </div>
 </div>
+
+<script>
+  function positionLinks() {
+    var container = document.getElementById('links-cloud');
+    var items = container.getElementsByClassName('links-info');
+    var containerW = container.offsetWidth;
+    var containerH = container.offsetHeight;
+    var placed = [];
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.position = 'absolute';
+      var itemW = items[i].offsetWidth || 120;
+      var itemH = items[i].offsetHeight || 80;
+      var attempts = 0;
+      var pos;
+
+      do {
+        pos = {
+          left: Math.random() * (containerW - itemW),
+          top: Math.random() * (containerH - itemH)
+        };
+        attempts++;
+      } while (overlaps(pos, itemW, itemH, placed) && attempts < 50);
+
+      items[i].style.left = pos.left + 'px';
+      items[i].style.top = pos.top + 'px';
+      placed.push({ left: pos.left, top: pos.top, w: itemW, h: itemH });
+    }
+  }
+
+  function overlaps(pos, w, h, placed) {
+    for (var i = 0; i < placed.length; i++) {
+      if (pos.left < placed[i].left + placed[i].w + 20 &&
+          pos.left + w + 20 > placed[i].left &&
+          pos.top < placed[i].top + placed[i].h + 20 &&
+          pos.top + h + 20 > placed[i].top) {
+        return true;
+      }
+    }
+    return false;
+  }
+</script>
