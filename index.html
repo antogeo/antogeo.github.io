@@ -64,6 +64,7 @@ http://www.templatemo.com/tm-502-short
                 <a href="https://github.com/antogeo"><div class="logo"><img src="img/3d_link_30pc.jpg"></div></a>
                 <li class="tabs-1" data-tab-name="profile"><span class="tabs-text">Main</span></li>
                 <li class="tabs-2" data-tab-name="resume"><span class="tabs-text">Education</span></li>
+                <li class="tabs-7" data-tab-name="research"><span class="tabs-text">Research</span></li>
                 <li class="tabs-3" data-tab-name="portfolio"><span class="tabs-text">Publications</span></li>
                 <li class="tabs-5" data-tab-name="links"><span class="tabs-text">Links</span></li>
                 <li class="tabs-4" data-tab-name="contact"><span class="tabs-text">Contact</span></li>
@@ -109,7 +110,21 @@ http://www.templatemo.com/tm-502-short
                           .catch(error => {
                             console.error('Error loading more.html:', error);
                           });
-                </script> 
+                </script>
+              <!-- RESEARCH -->
+                <div class="fc-tab-research">
+                    <div id="research-container"></div>
+                </div>
+                <script>
+                    fetch('research.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('research-container').innerHTML = data;
+                        })
+                        .catch(error => {
+                            console.error('Error loading research.html:', error);
+                        });
+                </script>
               <!-- PUBLICATIONS -->
                 <div class="fc-tab-3">
                     <div id="publication-container"></div>
