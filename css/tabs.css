@@ -33,11 +33,11 @@
 */
 
 .resp-tabs-list {
-	padding: 22.5% 0px!important;
+	padding: 1% 0px!important;
 }
 
 .VerticalTab.tabs_ver_6.resp-vtabs ul.resp-tabs-list {
-    float: right!important;
+    float: left!important;
     width: 17.5%;
 	margin-top: 0px !important;
 }
@@ -45,12 +45,20 @@
 	padding: 0px;
 	background-color: transparent;
 	border: 0;
-	float: left;
+	float: right;
 	width: 75%;
 	min-height: auto;
 	clear: none;
 	border-radius: 0;
-	margin-left: 13px;
+	margin-right: 13px;
+}
+.site-header {
+	margin-bottom: 20px;
+}
+.site-header img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 .VerticalTab.tabs_ver_6 .resp-tabs-list .logo img {
 	max-width: 100%;
