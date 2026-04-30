@@ -5,7 +5,7 @@
     --tone-paper:        #f4ffda;
     --tone-vellum:       #afc788;
     --tone-ink:          #14171d;
-    --tone-graphite:     #0a3179;
+    --tone-graphite:     #090e16;
     --tone-rule:         #c9c2b4;
 
     --tone-mark:         #2a3744;
@@ -325,11 +325,11 @@ p { margin: 0 0 1rem; }
    PAGE HEADER (subpages)
    ========================================================= */
 .page-header {
-    padding: 1rem 0 3.5rem;
+    padding: 1rem 0 1.5rem;
     border-bottom: var(--hairline) solid var(--tone-rule);
 }
 .page-header__inner { max-width: 920px; }
-.page-header .kicker { margin-bottom: 1rem; }
+.page-header .kicker { margin-bottom: 0rem; }
 .page-header h1 {
     margin: 0;
     max-width: 22ch;
