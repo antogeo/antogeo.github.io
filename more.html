@@ -1,48 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Georgios Antonopoulos &mdash; a longer story.">
+    <title>About &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<!-- More -->
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html" class="is-current">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
 
- <div class="more-container" >
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
+    </div>
 
-   <div class="row">
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">About me</p>
+            <h1>More info about me.</h1>
+        </div>
+    </section>
 
-     <div class="col-md-12">
+    <section class="block" id="story">
+        <div class="wrap">
+            <header class="block__head">
+                <p class="kicker">A longer story</p>
+                <h2>From Athens to neuroimaging, with detours.</h2>
+            </header>
+            <div class="block__body">
+                <p class="standfirst">Born and raised in Athens, with a path that wandered through electronics, mathematics, image processing, and eventually the brain.</p>
+                <div class="prose">
+                    <p>I completed my BA in the neighbouring city of Piraeus, where I developed a strong interest in microcontrollers and electronics. This led me to take my first steps in programming with C and Assembly. During my internship I had the opportunity to work alongside experts in the field, and for my dissertation I developed a hardware-based GUI to control a 5-DOF robot arm.</p>
+                    <p>Shortly after, I briefly attended the Mathematics department at the University of Patras, taking a few courses out of personal interest &mdash; without completing the degree. It was there that I came across an interdisciplinary MA program in <em>Electronics &amp; Information Processing</em>, which I decided to pursue. My master's focused on image and signal processing, data analysis, and embedded systems. A course in Biomedical Imaging introduced me to brain imaging and the neural correlates of brain function, and that was it &mdash; I was hooked.</p>
+                    <p>This led me to a PhD in Neurosciences, focusing on machine learning applications in disorders of consciousness, defended in October 2019. In March 2020, I joined the Applied Machine Learning group at the Institute of Neuroscience and Medicine (INM-7) at Research Centre J&uuml;lich as a Postdoctoral Researcher, where I spent six years working on medical imaging and data analysis. Among other things, I have been trying to understand the brain aging trajectory &mdash; partly out of scientific curiosity, partly out of a personal interest in keeping my own brain as young as possible (still working on that).
+                      Personal Interests: Food enthusiast, amateur olive-oil producer and microcontroller applications hobbyist for small DIY digital projects.
+                      Personal Motto: "We alone regard the man who takes no part in politics not as someone who minds his own business but as useless" - Pericles
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-       <h2>More info about <em>ME</em></h2>
+    <section class="block" id="hobbies">
+        <div class="wrap">
+            <header class="block__head">
+                <p class="kicker">Hobbies</p>
+                <h2>When the laptop closes.</h2>
+            </header>
+            <div class="block__body">
+                <p class="standfirst">Running, cooking, fishing, chess, DIY electronics.</p>
+                <div class="prose">
+                    <p>The kind of things that keep the hands busy and the head clear &mdash; loosely arranged in order of how often they actually happen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-       <div class="under-line"></div>
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
 
-         <img src="img/header.jpeg">
-
-         <p align="justify">Born and raised in Athens, Greece, I completed my BA in the neighboring city of Piraeus, 
-
-             where I developed a strong interest in microcontrollers and electronics. This led me to take my first steps in programming 
-
-             with C and Assembly. During my internship I had the opportunity to work alongside experts in the field, and for my dissertation 
-
-             I developed a hardware-based GUI to control a 5-DOF robot arm.
-
-             Shortly after, I briefly attended the Mathematics department at the University of Patras, taking a few courses out of personal interest —
-
-             without completing the degree. It was there that I came across an interdisciplinary MA program in "Electronics & Information Processing", 
-
-             which I decided to pursue. My master's focused on image and signal processing, data analysis, and embedded systems. 
-
-             A course in Biomedical Imaging introduced me to brain imaging and the neural correlates of brain function, and that was it — I was hooked.
-
-             This led me to a PhD in Neurosciences, focusing on machine learning applications in disorders of consciousness, defended in October 2019. 
-
-             In March 2020, I joined the Applied Machine Learning group at the Institute of Neuroscience and Medicine (INM-7) at Research Centre Jülich 
-
-             as a Postdoctoral Researcher, where I spent six years working on medical imaging and data analysis. Among other things, I have been trying 
-
-             to understand the brain aging trajectory — partly out of scientific curiosity, partly out of a personal interest in keeping my own brain as 
-
-             young as possible (still working on that). </p>
-
-         <p  align="justify"><em>Hobbies</em><br>running, cooking, fishing, chess, DIY electronics </p>
-
-     </div>
-
-   </div>
-
- </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

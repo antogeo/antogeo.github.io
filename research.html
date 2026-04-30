@@ -1,58 +1,100 @@
-<div class="about-container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>Research &amp; <em>Experience</em></h2>
-      <div class="under-line"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research and work experience &mdash; Georgios Antonopoulos.">
+    <title>Research &amp; Experience &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-      <img src="img/work.jpeg">
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html" class="is-current">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
 
-      <p align="justify">
-        
-      <p align="justify"><em>WORK EXPERIENCE</em><br>
-        <b>March 2020 – February 2026:</b> Postdoctoral Researcher, Applied Machine Learning group<br>
-         Research Centre Jülich, Jülich, Germany<br>
-        <i>During this period the affiliation was shared between the following two institutes:<br>
-        Institute of Systems Neuroscience, Heinrich Heine University Düsseldorf, Düsseldorf, Germany<br>
-        Institute of Neuroscience and Medicine (INM-7: Brain and Behaviour), Research Centre Jülich, Jülich, Germany
-      </i>
-      </p>
-      <br>
-      
-      <p align="justify">
-        After the doctoral studies the questions around the brain drifted from
-        "is someone there?" toward "how old is this brain?".
-      </p>
-      <p align="justify">
-        The time spent has been shared between the many technical and sometimes unpopular sides of 
-        neuroimaging. From getting different brain scans into a shape where they can
-        actually be compared to each other aka Preprocessing, normalization, quality
-        control — to the more visible layer: machine learning
-        applied to brain-age estimation, benchmarking pipelines and workflows
-        end-to-end, and figuring out which combinations of features and models still
-        behave when the datasets get bigger and messier.
-      </p>
-
-      <p align="justify">
-        The day-to-day toolkit is Python, MATLAB, and an unreasonable amount of shell
-        scripting, alongside the usual neuroimaging stack and the libraries that keep
-        large-scale analyses tractable. And just to keep things from getting boring, all
-        of this runs across a range of infrastructure setups — from local workstations to
-        high-performance and high-throughput computing clusters.
-      </p>
-      
-      <p align="justify">
-        A couple of contributions sit on bookshelves as well — one on structural
-        brain-image analysis and computational anatomy, and another on imaging
-        approaches to measuring consciousness.
-      </p>
-
-      <p align="justify"><em>TEACHING EXPERIENCE</em><br>
-        Some of this made its way into the classroom too: Voxel-Based Morphometry
-        and applied machine-learning basics taught to Master's students in cognitive
-        neuroscience programs, short courses for researchers picking up ML for the
-        first time, and — much earlier — a stretch of teaching microprocessors and
-        digital systems in an electronics lab.
-      </p>
+    <div class="page-banner">
+        <img src="img/work.jpeg" alt="">
     </div>
-  </div>
-</div>
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">Research &amp; Experience</p>
+            <h1>From "is someone there?" to "how old is this brain?"</h1>
+        </div>
+    </section>
+
+    <section class="block" id="work">
+        <div class="wrap">
+            <header class="block__head">
+                <p class="kicker">Work Experience</p>
+                <h2>Postdoctoral research, applied machine learning.</h2>
+            </header>
+            <div class="block__body">
+                <p class="standfirst">March 2020 &ndash; February 2026: Postdoctoral Researcher, Applied Machine Learning group &mdash; Research Centre J&uuml;lich, Germany.</p>
+                <div class="prose">
+                    <p>During this period the affiliation was shared between the Institute of Systems Neuroscience (Heinrich Heine University D&uuml;sseldorf) and the Institute of Neuroscience and Medicine (INM-7: Brain and Behaviour) at Research Centre J&uuml;lich.</p>
+                    <p>After the doctoral studies the questions around the brain drifted from <em>"is someone there?"</em> toward <em>"how old is this brain?"</em>. The time spent has been shared between the many technical and sometimes unpopular sides of neuroimaging &mdash; from getting different brain scans into a shape where they can actually be compared to each other (preprocessing, normalization, quality control) to the more visible layer: machine learning applied to brain-age estimation, benchmarking pipelines and workflows end-to-end, and figuring out which combinations of features and models still behave when the datasets get bigger and messier.</p>
+                    <p>The day-to-day toolkit is Python, MATLAB, and an unreasonable amount of shell scripting, alongside the usual neuroimaging stack and the libraries that keep large-scale analyses tractable. And just to keep things from getting boring, all of this runs across a range of infrastructure setups &mdash; from local workstations to high-performance and high-throughput computing clusters.</p>
+                    <p>A couple of contributions sit on bookshelves as well &mdash; one on structural brain-image analysis and computational anatomy, and another on imaging approaches to measuring consciousness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="teaching">
+        <div class="wrap">
+            <header class="block__head">
+                <p class="kicker">Teaching Experience</p>
+                <h2>From the lab bench to the lecture hall.</h2>
+            </header>
+            <div class="block__body">
+                <p class="standfirst">Some of this made its way into the classroom too.</p>
+                <div class="prose">
+                    <p>Voxel-Based Morphometry and applied machine-learning basics taught to Master's students in cognitive neuroscience programs, short courses for researchers picking up ML for the first time, and &mdash; much earlier &mdash; a stretch of teaching microprocessors and digital systems in an electronics lab.</p>
+                    <p><a href="previous_experience.html" class="action">Previous experience &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

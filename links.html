@@ -1,71 +1,89 @@
-<!--LINKS-->
-<div class="links-container">
-  <div class="heading" style="text-align: center;">
-    <h2>Selected Links</h2>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selected links &mdash; tools, groups, and references.">
+    <title>Links &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-  <div id="links-cloud" style="position: relative; height: 500px;">
-    <div class="links-info">
-      <a href="http://scikit-learn.org/stable/">
-        <img src="img/scikit-learn-logo-small.png"><br>scikit learn
-      </a>
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html" class="is-current">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
     </div>
-    <div class="links-info">
-      <a href="http://nilearn.github.io">
-        <img src="img/nilearn-logo.png"><br>Nilearn
-      </a>
-    </div>
-    <div class="links-info">
-      <a href="https://www.fz-juelich.de/en/inm/inm-7/research-groups/applied-machine-learning-aml">
-        <img src="img/juaml.png"><br>Applied Machine Learning Group
-      </a>
-    </div>
-    <div class="links-info">
-      <a href="http://www.coma.ulg.ac.be/">
-        <img src="img/coma.jpg"><br>Coma Science Group
-      </a>
-    </div>
-  </div>
-</div>
 
-<script>
-  function positionLinks() {
-    var container = document.getElementById('links-cloud');
-    var items = container.getElementsByClassName('links-info');
-    var containerW = container.offsetWidth;
-    var containerH = container.offsetHeight;
-    var placed = [];
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">Links</p>
+            <h1>Selected links.</h1>
+        </div>
+    </section>
 
-    for (var i = 0; i < items.length; i++) {
-      items[i].style.position = 'absolute';
-      var itemW = items[i].offsetWidth || 120;
-      var itemH = items[i].offsetHeight || 80;
-      var attempts = 0;
-      var pos;
+    <section class="block">
+        <div class="wrap">
+            <div class="links-grid">
+                <a class="links-card" href="http://scikit-learn.org/stable/">
+                    <img src="img/scikit-learn-logo-small.png" alt="scikit-learn">
+                    <span>scikit&dash;learn</span>
+                </a>
+                <a class="links-card" href="http://nilearn.github.io">
+                    <img src="img/nilearn-logo.png" alt="Nilearn">
+                    <span>Nilearn</span>
+                </a>
+                <a class="links-card" href="https://www.fz-juelich.de/en/inm/inm-7/research-groups/applied-machine-learning-aml">
+                    <img src="img/juaml.png" alt="Applied Machine Learning Group">
+                    <span>Applied Machine Learning Group</span>
+                </a>
+                <a class="links-card" href="http://www.coma.ulg.ac.be/">
+                    <img src="img/coma.jpg" alt="Coma Science Group">
+                    <span>Coma Science Group</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-      do {
-        pos = {
-          left: Math.random() * (containerW - itemW),
-          top: Math.random() * (containerH - itemH)
-        };
-        attempts++;
-      } while (overlaps(pos, itemW, itemH, placed) && attempts < 50);
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
 
-      items[i].style.left = pos.left + 'px';
-      items[i].style.top = pos.top + 'px';
-      placed.push({ left: pos.left, top: pos.top, w: itemW, h: itemH });
-    }
-  }
-
-  function overlaps(pos, w, h, placed) {
-    for (var i = 0; i < placed.length; i++) {
-      if (pos.left < placed[i].left + placed[i].w + 20 &&
-          pos.left + w + 20 > placed[i].left &&
-          pos.top < placed[i].top + placed[i].h + 20 &&
-          pos.top + h + 20 > placed[i].top) {
-        return true;
-      }
-    }
-    return false;
-  }
-</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
