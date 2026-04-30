@@ -1,88 +1,121 @@
- <!-- PROJECTS -->
-  <div class="owl-carousel owl-theme projects-container">
-    <div>
-      <div class="project-item">
-        <div class="thumb-holder">
-          <div class="hover-effect">
-            <div class="hover-content">
-              <h4 ><a href="https://doi.org/10.1093/brain/awv169">Intrinsic functional connectivity differentiates minimally conscious from unresponsive patients</h4>
-              Georgios Antonopoulos, Athena Demertzi  et al.
-              Brain, Volume 138, Issue 9, 1 September 2015, Pages 2619–2631</a>
-            </div>
-          </div>
-          <img src="img/project-item-01.jpg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selected publications &mdash; Georgios Antonopoulos.">
+    <title>Publications &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html" class="is-current">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
         </div>
-      </div>
-    </div>              
-    <div>
-      <div class="project-item">
-        <div class="thumb-holder">
-          <div class="hover-effect">
-            <div class="hover-content">
-              <h4><a href="https://doi.org/10.1016/j.compbiomed.2025.111182">
-              Region-wise stacking ensembles for estimating brain-age using structural MRI.
-              G. Antonopoulos et al, Computers in Biology and Medicine 2025.</a></h4>
-            </div>
-          </div>
-          <img src="img/stacking_abstract.jpg">
-        </div>
-      </div>
-    </div> 
-    <div>
-      <div class="project-item">
-        <div class="thumb-holder">
-          <div class="hover-effect">
-            <div class="hover-content">
-              <h4><a href="https://doi.org/10.1016/j.neuroimage.2023.120292">
-              A systematic comparison of VBM pipelines and their application to age prediction.
-              G. Antonopoulos, et al, NeuroImage 2023.</a></h4>
-            </div>
-          </div>
-          <img src="img/vbm_comparison.jpg">
-        </div>
-      </div>
+    </header>
+
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
     </div>
-    <div>
-      <div class="project-item">
-        <div class="thumb-holder">
-          <div class="hover-effect">
-            <div class="hover-content">
-              <h4><a href="https://doi.org/10.1016/j.neuroimage.2023.119947">
-              Brain-age prediction: A systematic comparison of machine learning workflows.
-              S. More, G. Antonopoulos, et al, Neuroimage 2023.</a></h4>
-            </div>
-          </div>
-          <img src="img/brain_age_More.jpg">
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">Publications</p>
+            <h1>Selected publications.</h1>
         </div>
-      </div>
-    </div>
-    
-    <div>
-      <div class="project-item">
-        <div class="thumb-holder">
-          <div class="hover-effect">
-            <div class="hover-content">
-              <h4><a href="https://doi.org/10.1109/ISBI56570.2024.10635167">
-              FastGPR: Divide-and-Conquer Technique in Neuroimaging Data Shortens Training Time and Improves Accuracy.
-              F. Raimondo, G. Antonopoulos, S. B. Eickhoff, K. R. Patil, IEEE Xplore 2024.</a></h4>
-            </div>
-          </div>
-          <img src="img/raimo1-p4-raimo-large.gif">
+    </section>
+
+    <section class="block">
+        <div class="wrap">
+            <ol class="pubs">
+                <li class="pub">
+                    <div class="pub__thumb"><img src="img/stacking_abstract.jpg" alt=""></div>
+                    <div class="pub__copy">
+                        <h3><a href="https://doi.org/10.1016/j.compbiomed.2025.111182">Region-wise stacking ensembles for estimating brain-age using structural MRI.</a></h3>
+                        <p class="pub__authors">G. Antonopoulos et al.</p>
+                        <p class="pub__venue">Computers in Biology and Medicine &middot; 2025</p>
+                    </div>
+                </li>
+                <li class="pub">
+                    <div class="pub__thumb"><img src="img/raimo1-p4-raimo-large.gif" alt=""></div>
+                    <div class="pub__copy">
+                        <h3><a href="https://doi.org/10.1109/ISBI56570.2024.10635167">FastGPR: Divide-and-Conquer Technique in Neuroimaging Data Shortens Training Time and Improves Accuracy.</a></h3>
+                        <p class="pub__authors">F. Raimondo, G. Antonopoulos, S. B. Eickhoff, K. R. Patil.</p>
+                        <p class="pub__venue">IEEE Xplore &middot; 2024</p>
+                    </div>
+                </li>
+                <li class="pub">
+                    <div class="pub__thumb"><img src="img/project-item-05.jpg" alt=""></div>
+                    <div class="pub__copy">
+                        <h3><a href="https://doi.org/10.2967/jnumed.123.265931">MRI or 18F-FDG PET for Brain Age Gap Estimation: Links to Cognition, Pathology, and Alzheimer Disease Progression.</a></h3>
+                        <p class="pub__authors">E. Doering, G. Antonopoulos, et al.</p>
+                        <p class="pub__venue">Journal of Nuclear Medicine &middot; 2024</p>
+                    </div>
+                </li>
+                <li class="pub">
+                    <div class="pub__thumb"><img src="img/vbm_comparison.jpg" alt=""></div>
+                    <div class="pub__copy">
+                        <h3><a href="https://doi.org/10.1016/j.neuroimage.2023.120292">A systematic comparison of VBM pipelines and their application to age prediction.</a></h3>
+                        <p class="pub__authors">G. Antonopoulos, et al.</p>
+                        <p class="pub__venue">NeuroImage &middot; 2023</p>
+                    </div>
+                </li>
+                <li class="pub">
+                    <div class="pub__thumb"><img src="img/brain_age_More.jpg" alt=""></div>
+                    <div class="pub__copy">
+                        <h3><a href="https://doi.org/10.1016/j.neuroimage.2023.119947">Brain-age prediction: A systematic comparison of machine learning workflows.</a></h3>
+                        <p class="pub__authors">S. More, G. Antonopoulos, et al.</p>
+                        <p class="pub__venue">NeuroImage &middot; 2023</p>
+                    </div>
+                </li>
+                <li class="pub">
+                    <div class="pub__thumb"><img src="img/project-item-01.jpg" alt=""></div>
+                    <div class="pub__copy">
+                        <h3><a href="https://doi.org/10.1093/brain/awv169">Intrinsic functional connectivity differentiates minimally conscious from unresponsive patients.</a></h3>
+                        <p class="pub__authors">Georgios Antonopoulos, Athena Demertzi et al.</p>
+                        <p class="pub__venue">Brain &middot; Volume 138, Issue 9 &middot; September 2015</p>
+                    </div>
+                </li>
+            </ol>
         </div>
-      </div>
-    </div>
-    <div>
-      <div class="project-item">
-        <div class="thumb-holder">
-          <div class="hover-effect">
-            <div class="hover-content">
-              <h4><a href="https://doi.org/10.2967/jnumed.123.265931">
-              MRI or 18F-FDG PET for Brain Age Gap Estimation: Links to Cognition, Pathology, and Alzheimer Disease Progression.
-              E. Doering, G. Antonopoulos, et al, Journal of Nuclear Medicine 2024.</a></h4>
-            </div>
-          </div>
-          <img src="img/project-item-05.jpg">
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
         </div>
-      </div>
-    </div>
-  </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

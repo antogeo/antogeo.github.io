@@ -1,25 +1,98 @@
-<div class="about-container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>Educational Background</h2>
-      <div class="under-line"></div>
-      <img src="img/education.png" class="edu-photo">
-      <p align="justify"><em>EDUCATION</em><br>
-        <b>Oct 2013 – Oct 2019:</b> PhD in Neurosciences (Full Scholarship) — University of Liège, Belgium<br>
-        <b>Title:</b> <i>Machine Learning Applications for Characterizing Brain-Damaged Patients' Level of Consciousness</i><br>
-        I applied machine learning techniques to functional neuroimaging data to characterize levels of consciousness 
-        in patients with severe brain injury. The findings contributed to our understanding of the neural correlates 
-        of consciousness. As part of the work, I also developed and validated a Python library for processing medical 
-        images, designed as a complementary tool to standard behavioral assessments.
-      </p>
-      <p align="justify">
-        <b>August 2013:</b> MA in Electronics and Information Processing — University of Patras, Greece<br>
-        <b>Thesis:</b> <i>Hardware Implementation of HOG Descriptor for Human Detection in Images and Videos</i>
-      </p>
-      <p align="justify">
-        <b>July 2008:</b> BA in Computing Systems Engineering — Technological Educational Institute of Piraeus, Greece<br>
-        <b>Dissertation:</b> <i>Application Development for the Control of a 5-DOF Robotic Arm</i>
-      </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational background &mdash; Georgios Antonopoulos.">
+    <title>Education &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html" class="is-current">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <img src="img/education.png" alt="">
     </div>
-  </div>
-</div>
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">Education</p>
+            <h1>Educational background.</h1>
+        </div>
+    </section>
+
+    <section class="block">
+        <div class="wrap">
+            <ol class="timeline">
+                <li class="timeline__item">
+                    <div class="timeline__when">Oct 2013 &ndash; Oct 2019</div>
+                    <div class="timeline__what">
+                        <h3>PhD in Neurosciences</h3>
+                        <p class="timeline__where">University of Li&egrave;ge, Belgium &mdash; Full Scholarship</p>
+                        <p><em>Thesis:</em> Machine Learning Applications for Characterizing Brain-Damaged Patients' Level of Consciousness.</p>
+                        <p>Applied machine learning techniques to functional neuroimaging data to characterize levels of consciousness in patients with severe brain injury. The findings contributed to our understanding of the neural correlates of consciousness. As part of the work, I also developed and validated a Python library for processing medical images, designed as a complementary tool to standard behavioral assessments.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <div class="timeline__when">August 2013</div>
+                    <div class="timeline__what">
+                        <h3>MA in Electronics and Information Processing</h3>
+                        <p class="timeline__where">University of Patras, Greece</p>
+                        <p><em>Thesis:</em> Hardware Implementation of HOG Descriptor for Human Detection in Images and Videos.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <div class="timeline__when">July 2008</div>
+                    <div class="timeline__what">
+                        <h3>BA in Computing Systems Engineering</h3>
+                        <p class="timeline__where">Technological Educational Institute of Piraeus, Greece</p>
+                        <p><em>Dissertation:</em> Application Development for the Control of a 5-DOF Robotic Arm.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

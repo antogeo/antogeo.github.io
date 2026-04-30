@@ -1,260 +1,75 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Antogeo</title>
-<!--
-Short HTML Template
-http://www.templatemo.com/tm-502-short
--->
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Georgios Antonopoulos &mdash; data analysis, neuroimaging, machine learning, scientific programming.">
+    <title>Antogeo &mdash; Georgios Antonopoulos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/animate.min.css">
-        <link rel="stylesheet" href="css/easy-responsive-tabs.min.css">
-        <link rel="stylesheet" href="css/tabs.css">
-        <link rel="stylesheet" href="css/templatemo-style.css">
+    <header class="masthead" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html" class="is-current">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/easyResponsiveTabs.js"></script>
-        <script src="js/jquery.nicescroll.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-    <!-- Laoding page  -->
-    <div class="preloader">
-      <div class="spinner">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
-      </div>
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
     </div>
-    <!-- End Laoding page  -->
 
-    <!-- Begin HorizontalTab style 6 -->
-    <section class="section-full image-bg">
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-md-12">
-
-            <div class="responsive-logo hidden-lg hidden-md hidden-sm"></div>
-
-            <!-- Begin .HorizontalTab -->
-            <div class="VerticalTab VerticalTab_hash_scroll VerticalTab_6 tabs_ver_6">
-
-              <ul class="resp-tabs-list hor_1">
-                <a href="https://github.com/antogeo"><div class="logo"><img src="img/3d_link_30pc.jpg"></div></a>
-                <li class="tabs-1" data-tab-name="profile"><span class="tabs-text">Main</span></li>
-                <li class="tabs-2" data-tab-name="resume"><span class="tabs-text">Education</span></li>
-                <li class="tabs-7" data-tab-name="research"><span class="tabs-text">Research</span></li>
-                <li class="tabs-3" data-tab-name="portfolio"><span class="tabs-text">Publications</span></li>
-                <li class="tabs-5" data-tab-name="links"><span class="tabs-text">Links</span></li>
-                <li class="tabs-4" data-tab-name="contact"><span class="tabs-text">Contact</span></li>
-                <li class="tabs-6" data-tab-name="more"><span class="tabs-text">More...</span></li>
-              </ul>
-              <!-- MAIN -->
-              <div class="resp-tabs-container hor_1 tabs_scroll">
-                <div class="fc-tab-1">
-                  <div class="home-container">
-                    <div class="row">
-                      <!-- <div class="col-md-6"> -->
-                        <div class="left-content">
-                          <div class="left-line"></div>
-                          <h2><em>Georgios Antonopoulos</em></b></h2>
-                          <p align="center"><em>Data Analysis</em>, Neuroimaging, <em>Image Processing</em>, Scientific programming, <em>Embedded Systems</em>
-                                            <em>Machine Learning</em>, Scientific writing, <em>Medical image processing</em>, Presentations, <em> etc</em>
-                          
-                          </p>
-                          <!-- <div class="primary-button">
-                            <a href="#more-container">Discover More</a>
-                          </div> -->
-                        </div>
-                      <!-- </div> -->
-                      <div class="row">
-                        <div class="right-content">
-                          <img src="img/four_effe.jpg">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-                <!-- EDUCATION -->
-                <div class="fc-tab-2">
-                  <div id="education-container"></div>
-                </div>
-                <script>
-                    fetch('education.html')
-                          .then(response => response.text())
-                          .then(data => {
-                            document.getElementById('education-container').innerHTML = data;
-                          })
-                          .catch(error => {
-                            console.error('Error loading more.html:', error);
-                          });
-                </script>
-              <!-- RESEARCH -->
-                <div class="fc-tab-research">
-                    <div id="research-container"></div>
-                </div>
-                <script>
-                    fetch('research.html')
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('research-container').innerHTML = data;
-                        })
-                        .catch(error => {
-                            console.error('Error loading research.html:', error);
-                        });
-                </script>
-              <!-- PUBLICATIONS -->
-                <div class="fc-tab-3">
-                    <div id="publication-container"></div>
-                </div>
-                <script>
-                    fetch('publications.html')
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('publication-container').innerHTML = data;
-                            jQuery('#publication-container .owl-carousel').owlCarousel({
-                                items: 3,
-                                loop: true,
-                                nav: true,
-                                dots: true,
-                                responsive: {
-                                    0: { items: 1 },
-                                    768: { items: 2 },
-                                    1024: { items: 3 }
-                                }
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error loading publications.html:', error);
-                        });
-                </script>
-                <!-- LINKS -->
-                <div class="fc-tab-4">
-                    <div id="links-container"></div>
-                </div>
-                <script>
-                    fetch('links.html')
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('links-container').innerHTML = data;
-                            positionLinks();
-                        })
-                        .catch(error => {
-                            console.error('Error loading links.html:', error);
-                        });
-                </script>     
-                <!-- CONTACT -->
-                <div class="fc-tab-5">
-                  <div class="contact-container">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="contact-form">
-                          <div class="heading">
-                            <h2>Contact Details</h2>
-                          </div>
-                           <p> <br> 
-                                Georgios Antonopoulos <br>
-                               <b>Email</b>: g . antonopoulos [at] fz-juelich . de <br>
-
-                            <p align="justify"><br><br><br></p>
-
-                          <!-- <form id="contact" action="" method="post">
-                            <fieldset>
-                              <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
-                            </fieldset>
-                            <fieldset>
-                              <input name="email" type="email" class="form-control" id="email" placeholder="Email" required="">
-                            </fieldset>
-                            <fieldset>
-                              <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required=""></textarea>
-                            </fieldset>
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="btn">send</button>
-                            </fieldset>
-                          </form> -->
-                          <!-- <form action="mail.php" method="POST">
-                            <p>Name</p> <input type="text" name="name">
-                            <p>Email</p> <input type="text" name="email">
-                            <p>Phone</p> <input type="text" name="phone">
-
-                            <p>Request Phone Call:</p>
-                            Yes:<input type="checkbox" value="Yes" name="call">
-                            No:<input type="checkbox" value="No" name="call"><br />
-
-
-                            <p>Priority</p>
-                            <select name="priority" size="1">
-                            <option value="Low">Low</option>
-                            <option value="Normal">Normal</option>
-                            <option value="High">High</option>
-                            <option value="Emergency">Emergency</option>
-                            </select>
-                            <br />
-                            <p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
-                            <input type="submit" value="Send"><input type="reset" value="Clear">
-                          </form> -->
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="contact"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- More -->
-                <div class="fc-tab-6">
-                    <div id="more-container"></div>
-                </div>      
-                    <script>
-                      fetch('more.html')
-                          .then(response => response.text())
-                          .then(data => {
-                            document.getElementById('more-container').innerHTML = data;
-                          })
-                          .catch(error => {
-                            console.error('Error loading more.html:', error);
-                          });
-                    </script>
-              </div>  
+    <section class="intro" id="top">
+        <div class="wrap intro__grid">
+            <div class="intro__lede">
+                <p class="kicker">Data Analysis &middot; Neuroimaging &middot; Machine Learning</p>
+                <h1>Georgios<br>Antonopoulos.</h1>
+                <p class="intro__deck">Postdoctoral researcher working at the intersection of neuroimaging, machine learning, and scientific programming &mdash; with detours through embedded systems, image processing, and the occasional medical-image pipeline that refuses to behave.</p>
+                <a href="research.html" class="action">View research &amp; experience &rarr;</a>
             </div>
-            <!-- End .HorizontalTab -->
-          </div>
-        </div>    
-      </div>
+            <aside class="intro__seal" aria-hidden="true">
+                <div class="seal">
+                    <img src="img/four_effe.jpg" alt="">
+                </div>
+            </aside>
+        </div>
     </section>
-    </div>
-    <!-- End HorizontalTab style 6 -->
 
-      <footer>
-        <p>Copyright &copy; 2018 Antogeo
-            
-      </footer>
-    </div> <!-- /container -->
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
 
-
-    </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
