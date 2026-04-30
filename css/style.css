@@ -2,18 +2,18 @@
    THEME
    ========================================================= */
 :root {
-    --tone-paper:        #f4f1ea;
-    --tone-vellum:       #e7e0cf;
+    --tone-paper:        #f4ffda;
+    --tone-vellum:       #afc788;
     --tone-ink:          #14171d;
-    --tone-graphite:     #3a3f48;
+    --tone-graphite:     #0a3179;
     --tone-rule:         #c9c2b4;
 
     --tone-mark:         #2a3744;
     --tone-mark-deep:    #111722;
 
-    --face-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
+    --face-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
     --face-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
-    --face-mono:    'Courier New', ui-monospace, monospace;
+    --face-mono:    'JetBrains Mono', 'Courier New', ui-monospace, monospace;
 
     --measure: 1240px;
     --gutter: 1.75rem;
@@ -53,9 +53,9 @@ a {
 
 h1, h2, h3 {
     font-family: var(--face-display);
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.15;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
     margin: 0 0 1rem;
 }
 h1 { font-size: clamp(2.5rem, 5.5vw, 4.25rem); }
@@ -120,12 +120,12 @@ p { margin: 0 0 1rem; }
    MASTHEAD
    ========================================================= */
 .masthead {
-    position: fixed;
-    inset: 0 0 auto 0;
+    position: sticky;
+    top: 0;
     z-index: 50;
-    border-bottom: var(--hairline) solid transparent;
-    background: transparent;
-    transition: background 0.3s ease, border-color 0.3s ease;
+    background: var(--tone-paper);
+    border-top: var(--hairline) solid var(--tone-rule);
+    border-bottom: var(--hairline) solid var(--tone-rule);
 }
 .masthead.is-pinned {
     background: var(--tone-paper);
@@ -139,15 +139,24 @@ p { margin: 0 0 1rem; }
     height: 70px;
 }
 
+.wordmark-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+}
 .wordmark {
     font-family: var(--face-display);
     font-size: 1.5rem;
     letter-spacing: 0.01em;
     color: var(--tone-ink);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
 }
+.wordmark__logo-link {
+    display: inline-block;
+    line-height: 0;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wordmark__logo-link:hover { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--tone-ink); }
 .wordmark__logo {
     height: 2.5rem;
     width: 2.5rem;
@@ -300,9 +309,7 @@ p { margin: 0 0 1rem; }
    PAGE BANNER
    ========================================================= */
 .page-banner {
-    margin-top: 70px;
     background: var(--tone-paper);
-    border-bottom: var(--hairline) solid var(--tone-rule);
     overflow: hidden;
 }
 .page-banner img {
