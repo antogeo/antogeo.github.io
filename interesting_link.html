@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interesting link &mdash; curated by Georgios Antonopoulos.">
+    <title>Interesting Link &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <a href="index.html" class="wordmark">Antogeo<img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html" class="is-current">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
+    </div>
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">Interesting Link</p>
+            <h1>Something worth a click.</h1>
+        </div>
+    </section>
+
+    <section class="block">
+        <div class="wrap">
+            <header class="block__head">
+                <p class="kicker">Coming soon</p>
+                <h2>A pointer worth keeping.</h2>
+            </header>
+            <div class="block__body">
+                <p class="standfirst">This page is being put together.</p>
+                <div class="prose">
+                    <!-- TODO: drop the link, a short note, and (optionally) a thumbnail. -->
+                    <p>Content will be added here shortly &mdash; one curated reference: paper, repo, dataset, or article that earned a bookmark.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
