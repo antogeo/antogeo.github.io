@@ -316,7 +316,7 @@ p { margin: 0 0 1rem; }
     display: block;
     width: 100%;
     height: auto;
-    max-height: 320px;
+    max-height: 400px;
     object-fit: cover;
     object-position: center;
 }
