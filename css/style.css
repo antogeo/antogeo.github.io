@@ -268,7 +268,7 @@ p { margin: 0 0 1rem; }
 .intro__seal { display: flex; justify-content: flex-end; }
 .seal {
     position: relative;
-    width: clamp(240px, 28vw, 340px);
+    width: clamp(360px, 42vw, 510px);
     aspect-ratio: 1;
     border: var(--hairline) solid var(--tone-ink);
     border-radius: 50%;
