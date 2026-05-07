@@ -290,9 +290,9 @@ p { margin: 0 0 1rem; }
 }
 .seal__node {
     position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: 26%;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    width: var(--node-size, 26%);
     aspect-ratio: 1;
     border-radius: 50%;
     border: var(--hairline) solid var(--tone-ink);
@@ -647,6 +647,34 @@ p { margin: 0 0 1rem; }
     color: var(--tone-ink);
     outline: none;
 }
+.lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border: var(--hairline) solid var(--tone-paper);
+    border-radius: 50%;
+    background: rgba(20, 23, 29, 0.55);
+    color: var(--tone-paper);
+    font-size: 1.8rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.lightbox__nav:hover,
+.lightbox__nav:focus-visible {
+    background: var(--tone-paper);
+    color: var(--tone-ink);
+    outline: none;
+}
+.lightbox__nav[hidden] { display: none; }
+.lightbox__prev { left: 1.5rem; }
+.lightbox__next { right: 1.5rem; }
+.lightbox__prev:hover { transform: translateY(-50%) translateX(-2px); }
+.lightbox__next:hover { transform: translateY(-50%) translateX(2px); }
 
 /* =========================================================
    RESPONSIVE
@@ -662,6 +690,9 @@ p { margin: 0 0 1rem; }
 }
 
 @media (max-width: 640px) {
+    .lightbox__nav { width: 42px; height: 42px; font-size: 1.4rem; }
+    .lightbox__prev { left: 0.5rem; }
+    .lightbox__next { right: 0.5rem; }
     .menu-trigger { display: block; }
     .primary-nav {
         position: fixed;
