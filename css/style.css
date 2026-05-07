@@ -351,6 +351,10 @@ p { margin: 0 0 1rem; }
     border-bottom: var(--hairline) solid var(--tone-rule);
 }
 .page-header__inner { max-width: 920px; }
+.page-header__inner--narrow {
+    max-width: 720px;
+    padding-inline: clamp(var(--gutter), 5vw, 4rem);
+}
 .page-header .kicker { margin-bottom: 0rem; }
 .page-header h1 {
     margin: 0;
