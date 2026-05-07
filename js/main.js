@@ -33,27 +33,107 @@
 
     if (yearStamp) yearStamp.textContent = String(new Date().getFullYear());
 
-    const sealNodes = document.querySelectorAll('.seal__node');
-    if (sealNodes.length) {
+    const seal = document.querySelector('.seal');
+    const sealNodes = seal ? Array.from(seal.querySelectorAll('.seal__node')) : [];
+
+    if (seal && sealNodes.length) {
+        const n = sealNodes.length;
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+        const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+
+        // Auto node size: shrinks as photo count grows. Tuned so n=7 sits at ~26%.
+        const nodeSize = Math.max(11, Math.min(30, 68.8 / Math.sqrt(n)));
+        seal.style.setProperty('--node-size', nodeSize + '%');
+
+        // Phyllotaxis (sunflower) positions. First node at center; rest spiral out.
+        const maxR = 0.5 - (nodeSize / 200) - 0.015; // leave a margin from the seal edge
+        const rMaxUnit = n > 1 ? Math.sqrt(n - 1) : 1;
+        const positions = [];
+        for (let i = 0; i < n; i++) {
+            const r = n === 1 ? 0 : (Math.sqrt(i) / rMaxUnit) * maxR;
+            const angle = i * goldenAngle;
+            positions.push({
+                x: 0.5 + r * Math.cos(angle),
+                y: 0.5 + r * Math.sin(angle),
+            });
+        }
+
+        sealNodes.forEach((node, i) => {
+            node.style.setProperty('--x', (positions[i].x * 100) + '%');
+            node.style.setProperty('--y', (positions[i].y * 100) + '%');
+        });
+
+        // Build connecting lines: each node to its k nearest neighbors. Dedupe pairs.
+        const svg = document.createElementNS(SVG_NS, 'svg');
+        svg.setAttribute('class', 'seal__lines');
+        svg.setAttribute('viewBox', '0 0 100 100');
+        svg.setAttribute('preserveAspectRatio', 'none');
+        svg.setAttribute('aria-hidden', 'true');
+
+        const k = Math.min(3, n - 1);
+        const seen = new Set();
+        for (let i = 0; i < n; i++) {
+            const dists = [];
+            for (let j = 0; j < n; j++) {
+                if (i === j) continue;
+                const dx = positions[i].x - positions[j].x;
+                const dy = positions[i].y - positions[j].y;
+                dists.push({ j: j, d: Math.hypot(dx, dy) });
+            }
+            dists.sort((a, b) => a.d - b.d);
+            for (let m = 0; m < k && m < dists.length; m++) {
+                const j = dists[m].j;
+                const key = i < j ? i + '-' + j : j + '-' + i;
+                if (seen.has(key)) continue;
+                seen.add(key);
+                const line = document.createElementNS(SVG_NS, 'line');
+                line.setAttribute('x1', String(positions[i].x * 100));
+                line.setAttribute('y1', String(positions[i].y * 100));
+                line.setAttribute('x2', String(positions[j].x * 100));
+                line.setAttribute('y2', String(positions[j].y * 100));
+                svg.appendChild(line);
+            }
+        }
+        seal.insertBefore(svg, seal.firstChild);
+
+        // Lightbox with prev/next.
         const lightbox = document.createElement('div');
         lightbox.className = 'lightbox';
         lightbox.setAttribute('aria-hidden', 'true');
         lightbox.innerHTML =
             '<button class="lightbox__close" aria-label="Close">&times;</button>' +
+            '<button class="lightbox__nav lightbox__prev" aria-label="Previous">&#x2039;</button>' +
+            '<button class="lightbox__nav lightbox__next" aria-label="Next">&#x203A;</button>' +
             '<figure class="lightbox__figure">' +
                 '<img class="lightbox__img" src="" alt="">' +
                 '<figcaption class="lightbox__caption"></figcaption>' +
             '</figure>';
         document.body.appendChild(lightbox);
 
-        const lbImg = lightbox.querySelector('.lightbox__img');
-        const lbCap = lightbox.querySelector('.lightbox__caption');
+        const lbImg   = lightbox.querySelector('.lightbox__img');
+        const lbCap   = lightbox.querySelector('.lightbox__caption');
         const lbClose = lightbox.querySelector('.lightbox__close');
+        const lbPrev  = lightbox.querySelector('.lightbox__prev');
+        const lbNext  = lightbox.querySelector('.lightbox__next');
 
-        const openLightbox = (src, caption) => {
-            lbImg.src = src;
-            lbImg.alt = caption || '';
-            lbCap.textContent = caption || '';
+        if (n <= 1) {
+            lbPrev.hidden = true;
+            lbNext.hidden = true;
+        }
+
+        let currentIndex = 0;
+        const showAt = (index) => {
+            currentIndex = ((index % n) + n) % n;
+            const node = sealNodes[currentIndex];
+            const img = node.querySelector('img');
+            if (!img) return;
+            const caption = node.getAttribute('title') || node.getAttribute('aria-label') || '';
+            lbImg.src = img.currentSrc || img.src;
+            lbImg.alt = caption;
+            lbCap.textContent = caption;
+        };
+        const openLightbox = (index) => {
+            showAt(index);
             lightbox.classList.add('is-open');
             lightbox.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -65,14 +145,11 @@
             document.body.style.overflow = '';
         };
 
-        sealNodes.forEach(node => {
+        sealNodes.forEach((node, i) => {
             node.addEventListener('click', (e) => {
                 e.preventDefault();
-                const img = node.querySelector('img');
-                if (!img) return;
-                const caption = node.getAttribute('title') || node.getAttribute('aria-label') || '';
                 if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
-                openLightbox(img.currentSrc || img.src, caption);
+                openLightbox(i);
             });
         });
 
@@ -80,9 +157,14 @@
             if (e.target === lightbox) closeLightbox();
         });
         lbClose.addEventListener('click', closeLightbox);
+        lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showAt(currentIndex - 1); });
+        lbNext.addEventListener('click', (e) => { e.stopPropagation(); showAt(currentIndex + 1); });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
+            if (!lightbox.classList.contains('is-open')) return;
+            if (e.key === 'Escape')         closeLightbox();
+            else if (e.key === 'ArrowLeft') showAt(currentIndex - 1);
+            else if (e.key === 'ArrowRight') showAt(currentIndex + 1);
         });
     }
 })();
