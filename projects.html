@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mini projects and demos &mdash; Georgios Antonopoulos.">
+    <title>Projects &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
+    </div>
+
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <div class="wordmark-group">
+                <a href="index.html" class="wordmark">Antogeo</a>
+                <a href="https://github.com/antogeo" class="wordmark__logo-link" target="_blank" rel="noopener" aria-label="GitHub: antogeo"><img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            </div>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html" class="is-current">Projects</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker">Demos &middot; Mini-projects</p>
+            <h1>Things I've built (or am building).</h1>
+            <p class="standfirst">Small interactive projects that show off bits of my workflow &mdash; data analysis, visualization, machine learning. Click a card to open the live demo.</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="wrap">
+            <div class="projects-grid">
+                <!-- Adding a real demo later — convert a card from coming-soon to live by:
+
+Remove the project-card--coming class.
+Wrap the card's contents in an anchor: <a class="project-card__link" ...>.
+Replace the gradient thumb with a screenshot: <img src="img/projects/your-shot.jpg" alt="">.
+Add a CTA at the bottom of __body: <span class="project-card__cta">Open viz &rarr;</span>.
+For Tableau → on the <a> add data-embed="https://public.tableau.com/views/.../sheet1?:embed=y&:showVizHome=no" 
+    and href="https://public.tableau.com/..." (the data-embed makes it open in the iframe-lightbox; href is the fallback if JS is off).
+For the bg-remover (e.g. on HuggingFace Spaces) → just href="https://huggingface.co/spaces/..." and target="_blank" rel="noopener". 
+No data-embed, so it opens in a new tab.
+Adding a totally new project — copy any <article class="project-card"> block and edit. The grid auto-flows.
+
+Iframe lightbox (js/main.js and css/style.css) is already wired: any <a data-embed="…"> anywhere on the site (not just the projects page) 
+    will open in a fullscreen modal with an iframe, closeable by Esc, backdrop click, or the × button. Same UX pattern as the photo lightbox in the seal. -->
+
+                <article class="project-card project-card--coming" data-tone="data">
+                    <div class="project-card__thumb">
+                        <span class="project-card__badge">In progress</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__tags">Tableau Public &middot; Data viz</p>
+                        <h3 class="project-card__title">Interactive analytics dashboard</h3>
+                        <p class="project-card__blurb">An exploratory dashboard built on a public dataset &mdash; filters, drill-downs, and the kind of small stories you only spot once you can slice the data yourself.</p>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--coming" data-tone="ml">
+                    <div class="project-card__thumb">
+                        <span class="project-card__badge">In progress</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__tags">Deep learning &middot; Image segmentation</p>
+                        <h3 class="project-card__title">Background remover</h3>
+                        <p class="project-card__blurb">Drop in a photo, and a small neural network running in the browser cuts the person out from whatever is behind them. No upload, no server &mdash; the model runs locally.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script data-goatcounter="https://antogeo.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

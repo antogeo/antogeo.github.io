@@ -167,4 +167,51 @@
             else if (e.key === 'ArrowRight') showAt(currentIndex + 1);
         });
     }
+
+    const embedLinks = document.querySelectorAll('a[data-embed]');
+    if (embedLinks.length) {
+        const embed = document.createElement('div');
+        embed.className = 'embed-lightbox';
+        embed.setAttribute('aria-hidden', 'true');
+        embed.innerHTML =
+            '<button class="embed-lightbox__close" aria-label="Close">&times;</button>' +
+            '<div class="embed-lightbox__frame"></div>';
+        document.body.appendChild(embed);
+
+        const frameWrap = embed.querySelector('.embed-lightbox__frame');
+        const embedClose = embed.querySelector('.embed-lightbox__close');
+
+        const openEmbed = (url, title) => {
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            if (title) iframe.title = title;
+            iframe.setAttribute('loading', 'lazy');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            frameWrap.replaceChildren(iframe);
+            embed.classList.add('is-open');
+            embed.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeEmbed = () => {
+            if (!embed.classList.contains('is-open')) return;
+            embed.classList.remove('is-open');
+            embed.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            frameWrap.replaceChildren();
+        };
+
+        embedLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openEmbed(link.dataset.embed, link.getAttribute('title') || link.getAttribute('aria-label'));
+            });
+        });
+
+        embed.addEventListener('click', (e) => { if (e.target === embed) closeEmbed(); });
+        embedClose.addEventListener('click', closeEmbed);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && embed.classList.contains('is-open')) closeEmbed();
+        });
+    }
 })();
