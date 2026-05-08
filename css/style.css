@@ -2,7 +2,7 @@
    THEME
    ========================================================= */
 :root {
-    --tone-paper:        #cbf5f3;
+    --tone-paper:        #e2f0ef;
     --tone-vellum:       #afc788;
     --tone-ink:          #14171d;
     --tone-graphite:     #090e16;
@@ -170,9 +170,12 @@ p { margin: 0 0 1rem; }
     margin: 0; padding: 0;
     display: flex;
     border: var(--hairline) solid var(--tone-ink);
+    border-radius: 8px;
 }
 .primary-nav li { position: relative; }
 .primary-nav li + li { border-left: var(--hairline) solid var(--tone-ink); }
+.primary-nav li:first-child > a { border-radius: 7px 0 0 7px; }
+.primary-nav li:last-child  > a { border-radius: 0 7px 7px 0; }
 .primary-nav a {
     display: block;
     padding: 0.7rem 1.2rem;
@@ -186,8 +189,10 @@ p { margin: 0 0 1rem; }
 }
 .primary-nav a:hover,
 .primary-nav a.is-current {
-    background: var(--tone-ink);
-    color: var(--tone-paper);
+    /* background: var(--tone-ink);
+    color: var(--tone-paper); */
+    background: #778177;
+    color: #042008;
 }
 .primary-nav .caret {
     display: inline-block;
