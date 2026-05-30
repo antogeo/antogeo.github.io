@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Background remover artifacts
+projects/background_removal/data/
+*.pth
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Tableau / notebook scratch
+*.twb
+.ipynb_checkpoints/
+
