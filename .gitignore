@@ -20,3 +20,6 @@ Thumbs.db
 *.twb
 .ipynb_checkpoints/
 
+# Local backups (never commit)
+back_up/
+
