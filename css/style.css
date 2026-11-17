@@ -626,6 +626,9 @@ p { margin: 0 0 1rem; }
 .project-card[data-tone="ml"] .project-card__thumb {
     background: linear-gradient(135deg, #b07090 0%, #4a2746 55%, #1c0f1f 100%);
 }
+.project-card[data-tone="cam"] .project-card__thumb {
+    background: linear-gradient(135deg, #c98a4b 0%, #5a3a24 55%, #1a120c 100%);
+}
 .project-card__thumb img {
     width: 100%;
     height: 100%;
@@ -698,6 +701,116 @@ p { margin: 0 0 1rem; }
     border-color: var(--tone-ink);
 }
 .project-card--coming .project-card__title { color: var(--tone-mark); }
+
+/* =========================================================
+   PC CAM (browser webcam recorder, pc_cam.html)
+   ========================================================= */
+.pccam { padding: 3rem 0 var(--band); }
+.pccam__intro { max-width: 46rem; }
+.pccam__heading { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
+.pccam-link { border-bottom: var(--hairline) solid currentColor; }
+.pccam-link:hover { color: var(--tone-mark); }
+button.pccam-link {
+    background: none;
+    border-top: 0; border-left: 0; border-right: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: var(--tone-ink);
+}
+.pccam-note {
+    max-width: 46rem;
+    border-left: 3px solid var(--tone-mark);
+    background: rgba(255, 255, 255, 0.45);
+    padding: 0.9rem 1.2rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+}
+.pccam-note p { margin: 0; color: var(--tone-graphite); }
+.pccam-error { color: #a12a22; font-weight: 500; }
+.pccam-screen {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    background: var(--tone-ink);
+    border: var(--hairline) solid var(--tone-ink);
+    border-radius: 10px;
+}
+#pccam-preview { aspect-ratio: 16 / 9; }
+.pccam-screen--photo { object-fit: contain; }
+.pccam-select:empty { display: none; }
+.pccam-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.9rem 0;
+}
+.pccam-btn {
+    font-family: var(--face-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tone-ink);
+    background: transparent;
+    border: var(--hairline) solid var(--tone-ink);
+    border-radius: 999px;
+    padding: 0.6rem 1.15rem;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.pccam-btn:hover:not(:disabled) { border-color: var(--tone-mark); color: var(--tone-mark); }
+.pccam-btn--solid { background: var(--tone-ink); color: var(--tone-paper); }
+.pccam-btn--solid:hover:not(:disabled) { background: var(--tone-mark); color: var(--tone-paper); }
+.pccam-btn--rec { border-color: #a12a22; color: #a12a22; }
+.pccam-btn--rec.is-recording,
+.pccam-btn--rec.is-recording:hover { background: #a12a22; border-color: #a12a22; color: #fff; }
+.pccam-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.pccam-select {
+    font: inherit;
+    font-size: 0.9rem;
+    max-width: 100%;
+    color: var(--tone-ink);
+    background: var(--tone-paper);
+    border: var(--hairline) solid var(--tone-ink);
+    border-radius: 6px;
+    padding: 0.45rem 0.6rem;
+}
+.pccam-check { font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.35rem; }
+.pccam-status { font-family: var(--face-mono); font-size: 0.8rem; color: var(--tone-graphite); margin: 0; }
+.pccam-status.pccam-rec { color: #a12a22; font-weight: 500; }
+.pccam-clips {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.9rem;
+}
+.pccam-clip {
+    border: var(--hairline) solid var(--tone-ink);
+    border-radius: 8px;
+    padding: 0.45rem;
+    font-size: 0.82rem;
+    background: rgba(255, 255, 255, 0.35);
+}
+.pccam-clip img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 5px;
+    background: var(--tone-ink);
+    cursor: pointer;
+}
+.pccam-clip__name {
+    margin-top: 0.35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.pccam-clip .pccam-clip-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+}
+.pccam-player { margin-top: 1rem; }
 
 /* =========================================================
    EMBED LIGHTBOX (project demo iframe)

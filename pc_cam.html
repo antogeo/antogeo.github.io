@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PC Cam: record videos and take photos from your webcam in the browser. Nothing is uploaded.">
+    <title>PC Cam &mdash; Antogeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-banner">
+        <img src="img/header.jpeg" alt="">
+    </div>
+
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <div class="wordmark-group">
+                <a href="index.html" class="wordmark">Antogeo</a>
+                <a href="https://github.com/antogeo" class="wordmark__logo-link" target="_blank" rel="noopener" aria-label="GitHub: antogeo"><img src="img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            </div>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="more.html">About me</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="research.html">Research &amp; Experience</a></li>
+                            <li><a href="previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html" class="is-current">Projects</a></li>
+                    <li class="has-submenu">
+                        <a href="links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="links.html">Selected Links</a></li>
+                            <li><a href="interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker"><a href="projects.html">Projects</a> &middot; Webcam recorder</p>
+            <h1>PC Cam</h1>
+            <p class="standfirst">Record videos and take photos from your webcam, right here in the browser.</p>
+        </div>
+    </section>
+
+    <section class="pccam">
+        <div class="wrap">
+            <div class="prose pccam__intro">
+                <p>This is a browser copy of my <a class="pccam-link" href="https://github.com/antogeo/PC_cam" target="_blank" rel="noopener">PC Cam desktop app</a>, which I wrote in Python. I built it because the camera apps on my system kept crashing, and vibe coding my own recorder turned out to be faster. The desktop app needs Python to run. This version uses only JavaScript, so it works on this page with nothing to install.</p>
+                <p>Choose your camera and resolution, take photos or record as many clips as you like, then play them back and download the ones you want to keep.</p>
+            </div>
+
+            <div class="pccam-note">
+                <p><strong>Privacy:</strong> The recorded video exists only in your browser's temporary memory (RAM), on your own computer. It is never uploaded anywhere. This site is static and has no server that could receive files anyway. Everything is deleted when you leave or close this page, so download the clips you want to keep first.</p>
+            </div>
+
+            <div id="pccam">
+                <p id="pccam-error" class="pccam-error" hidden></p>
+                <video id="pccam-preview" class="pccam-screen" autoplay playsinline muted></video>
+
+                <div class="pccam-controls">
+                    <button id="pccam-start" type="button" class="pccam-btn pccam-btn--solid">Start camera</button>
+                    <select id="pccam-camera" class="pccam-select" aria-label="Camera" disabled></select>
+                    <select id="pccam-resolution" class="pccam-select" aria-label="Resolution" disabled>
+                        <option value="640x480">640 &times; 480</option>
+                        <option value="1280x720" selected>1280 &times; 720</option>
+                        <option value="1920x1080">1920 &times; 1080</option>
+                        <option value="3840x2160">3840 &times; 2160</option>
+                    </select>
+                    <label class="pccam-check"><input id="pccam-audio" type="checkbox" checked> Microphone</label>
+                </div>
+                <div class="pccam-controls">
+                    <button id="pccam-photo" type="button" class="pccam-btn" disabled>Take photo</button>
+                    <button id="pccam-record" type="button" class="pccam-btn pccam-btn--rec" disabled>Record</button>
+                    <span id="pccam-status" class="pccam-status"></span>
+                </div>
+
+                <h2 class="pccam__heading">Clips</h2>
+                <p id="pccam-empty" class="pccam-status">No clips yet.</p>
+                <div class="pccam-controls">
+                    <button id="pccam-download" type="button" class="pccam-btn pccam-btn--solid" disabled>Download selected</button>
+                    <button id="pccam-discard" type="button" class="pccam-btn" disabled>Delete unselected</button>
+                    <button id="pccam-clear" type="button" class="pccam-btn" disabled>Delete all</button>
+                </div>
+                <div id="pccam-clips" class="pccam-clips"></div>
+
+                <div id="pccam-player-wrap" class="pccam-player" hidden>
+                    <h2 id="pccam-player-title" class="pccam__heading">Preview</h2>
+                    <video id="pccam-player" class="pccam-screen" controls playsinline hidden></video>
+                    <img id="pccam-player-img" class="pccam-screen pccam-screen--photo" alt="Photo preview" hidden>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/pc_cam.js"></script>
+    <script data-goatcounter="https://antogeo.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
