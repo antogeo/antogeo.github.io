@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PODO_niftis</title>
+  
+<script type="module">
+import init, * as bindings from '/projects/nifti_viewer/podo_niftis_web-8c1484c0f873d731.js';
+
+const wasm = await init({ module_or_path: '/projects/nifti_viewer/podo_niftis_web-1fa569bb77d6c41a_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+  <style>
+    html, body { margin: 0; height: 100%; background: #1b1b1b; color: #ccc; font-family: sans-serif; overflow: hidden; }
+    canvas { width: 100%; height: 100%; display: block; }
+    #loading_text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  </style>
+<link rel="modulepreload" href="/projects/nifti_viewer/podo_niftis_web-8c1484c0f873d731.js" crossorigin="anonymous" integrity="sha384-1Z2kOYd4JisoiLjtT47nOYsQB/zhSGHFhRVMJ81aUzQBGL0QP+viBlHdfhgeHYxk"><link rel="preload" href="/projects/nifti_viewer/podo_niftis_web-1fa569bb77d6c41a_bg.wasm" crossorigin="anonymous" integrity="sha384-qML8LNoJbOTkZVbGEjSmpIJ9g/dfH3OdY24XH5Yxekavq4Xv0+ZeiEC489a3t2nQ" as="fetch" type="application/wasm"></head>
+<body>
+  <canvas id="the_canvas_id"></canvas>
+  <div id="loading_text">Loading PODO_niftis&hellip;</div>
+</body>
+</html>
