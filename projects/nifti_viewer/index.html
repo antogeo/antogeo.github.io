@@ -24,13 +24,15 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script>
     <style>
-        .nv-viewer { padding: 1rem 0 var(--band, 3rem); }
+        .nv-viewer { padding: 1rem 0 0; }
+        /* Full-bleed and as tall as the window minus the pinned header (set exactly by the script below). */
         .nv-box {
             position: relative;
-            height: 78vh;
-            min-height: 520px;
+            width: 100%;
+            height: calc(100vh - 80px);
+            min-height: 420px;
             background: #1b1b1b;
-            border: 1px solid var(--tone-rule, #ccc);
+            border-top: 1px solid var(--tone-rule, #ccc);
             overflow: hidden;
         }
         .nv-box canvas { width: 100%; height: 100%; display: block; }
@@ -92,10 +94,10 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <section class="nv-viewer">
         <div class="wrap">
             <p class="nv-note"><strong>Privacy:</strong> scans are opened locally in your browser and never uploaded. Automatic registration is only in the <a href="https://github.com/antogeo/PODO_niftis" target="_blank" rel="noopener">desktop app</a>. Use Open&hellip; or drop <code>.nii</code> / <code>.nii.gz</code> files onto the viewer.</p>
-            <div class="nv-box">
-                <canvas id="the_canvas_id"></canvas>
-                <div id="loading_text">Loading PODO_niftis&hellip;</div>
-            </div>
+        </div>
+        <div class="nv-box" id="nvBox">
+            <canvas id="the_canvas_id"></canvas>
+            <div id="loading_text">Loading PODO_niftis&hellip;</div>
         </div>
     </section>
 
@@ -106,6 +108,15 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
         </div>
     </footer>
 
+    <script>
+        // Size the viewer to the window below the pinned header, and keep it that way on resize.
+        (function () {
+            var box = document.getElementById('nvBox'), head = document.getElementById('masthead');
+            function fit() { box.style.height = Math.max(420, window.innerHeight - head.offsetHeight) + 'px'; }
+            fit();
+            window.addEventListener('resize', fit);
+        })();
+    </script>
     <script src="../../js/main.js"></script>
     <script data-goatcounter="https://antogeo.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
