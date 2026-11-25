@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PODO_niftis</title>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PODO_niftis: a NIfTI viewer in the browser. Scans are opened locally and never uploaded.">
+    <title>PODO_niftis &mdash; Antogeo</title>
+    <!-- This page is meant to be deployed at antogeo.github.io/projects/nifti_viewer/, so the
+         site header, CSS and JS are referenced relative to that location (../../). Under
+         `trunk serve` those files don't exist and the page shows unstyled; the viewer still works. -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 <script type="module">
 import init, * as bindings from '/projects/nifti_viewer/podo_niftis_web-8c1484c0f873d731.js';
 
@@ -17,14 +23,91 @@ window.wasmBindings = bindings;
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script>
-  <style>
-    html, body { margin: 0; height: 100%; background: #1b1b1b; color: #ccc; font-family: sans-serif; overflow: hidden; }
-    canvas { width: 100%; height: 100%; display: block; }
-    #loading_text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-  </style>
+    <style>
+        .nv-viewer { padding: 1rem 0 var(--band, 3rem); }
+        .nv-box {
+            position: relative;
+            height: 78vh;
+            min-height: 520px;
+            background: #1b1b1b;
+            border: 1px solid var(--tone-rule, #ccc);
+            overflow: hidden;
+        }
+        .nv-box canvas { width: 100%; height: 100%; display: block; }
+        #loading_text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #ccc; }
+        .nv-note { max-width: 46rem; margin: 0 0 1rem; }
+    </style>
 <link rel="modulepreload" href="/projects/nifti_viewer/podo_niftis_web-8c1484c0f873d731.js" crossorigin="anonymous" integrity="sha384-1Z2kOYd4JisoiLjtT47nOYsQB/zhSGHFhRVMJ81aUzQBGL0QP+viBlHdfhgeHYxk"><link rel="preload" href="/projects/nifti_viewer/podo_niftis_web-1fa569bb77d6c41a_bg.wasm" crossorigin="anonymous" integrity="sha384-qML8LNoJbOTkZVbGEjSmpIJ9g/dfH3OdY24XH5Yxekavq4Xv0+ZeiEC489a3t2nQ" as="fetch" type="application/wasm"></head>
 <body>
-  <canvas id="the_canvas_id"></canvas>
-  <div id="loading_text">Loading PODO_niftis&hellip;</div>
+
+    <div class="page-banner">
+        <img src="../../img/header.jpeg" alt="">
+    </div>
+
+    <header class="masthead is-pinned" id="masthead">
+        <div class="wrap masthead__inner">
+            <div class="wordmark-group">
+                <a href="../../index.html" class="wordmark">Antogeo</a>
+                <a href="https://github.com/antogeo" class="wordmark__logo-link" target="_blank" rel="noopener" aria-label="GitHub: antogeo"><img src="../../img/3d_link_30pc.jpg" alt="" class="wordmark__logo"></a>
+            </div>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <button class="primary-nav__close" id="navClose" aria-label="Close menu">&times;</button>
+                <ol>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="../../more.html">About <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="../../more.html">About me</a></li>
+                            <li><a href="../../education.html">Education</a></li>
+                            <li><a href="../../research.html">Research &amp; Experience</a></li>
+                            <li><a href="../../previous_experience.html">Previous Experience</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../publications.html">Publications</a></li>
+                    <li><a href="../../projects.html" class="is-current">Projects</a></li>
+                    <li class="has-submenu">
+                        <a href="../../links.html">Links <span class="caret">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="../../links.html">Selected Links</a></li>
+                            <li><a href="../../interesting_link.html">Interesting Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ol>
+            </nav>
+            <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="wrap page-header__inner">
+            <p class="kicker"><a href="../../projects.html">Projects</a> &middot; NIfTI viewer</p>
+            <h1>PODO_niftis</h1>
+            <p class="standfirst">View, overlay, align and draw masks on NIfTI scans, right here in the browser.</p>
+        </div>
+    </section>
+
+    <section class="nv-viewer">
+        <div class="wrap">
+            <p class="nv-note"><strong>Privacy:</strong> scans are opened locally in your browser and never uploaded. Automatic registration is only in the <a href="https://github.com/antogeo/PODO_niftis" target="_blank" rel="noopener">desktop app</a>. Use Open&hellip; or drop <code>.nii</code> / <code>.nii.gz</code> files onto the viewer.</p>
+            <div class="nv-box">
+                <canvas id="the_canvas_id"></canvas>
+                <div id="loading_text">Loading PODO_niftis&hellip;</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="colophon">
+        <div class="wrap colophon__inner">
+            <p class="colophon__mark">Antogeo</p>
+            <p class="colophon__line">&copy; <span id="year"></span> Georgios Antonopoulos.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script data-goatcounter="https://antogeo.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
